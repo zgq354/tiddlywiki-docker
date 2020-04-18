@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  tiddly:
+    image: tiddlywiki:5.1.19
+    build: .
+    container_name: tiddlywiki-docker
+    restart: always
+    volumes:
+      - ./wiki-data:/app
+    ports:
+      - 8080:8080
+    env_file: ./.env
